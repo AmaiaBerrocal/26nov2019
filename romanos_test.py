@@ -1,5 +1,6 @@
 import unittest
-from romanos import romano_a_arabigo, arabigo_a_romano
+from romanos import romano_a_arabigo
+from arabigos import arabigo_a_romano
 
 
 class RomanNumberTest(unittest.TestCase):
