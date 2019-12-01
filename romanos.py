@@ -1,7 +1,7 @@
 valores = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
 valores5 = {'V':5, 'L':50, 'D':500}
 simbolosOrdenados = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
-
+valor = {1: 'I', 5: 'V', 10: 'X', 50: 'L', 100: 'C', 500: 'D', 1000: 'M'}
 
 def romano_a_arabigo(numRomano):
     numArabigo = 0
@@ -43,10 +43,26 @@ def romano_a_arabigo(numRomano):
 
     return numArabigo
 
-def arabigo_a_romano(valor):
-    pass    
-                                          
+
+def arabigo_a_romano(numArabigo):
+   
+    numDescompuesto = []
+
+    millares = numArabigo // 1000
+    numDescompuesto.append(millares)
+
+    restoC = numArabigo % 1000 
+
+    centenas = restoC // 100 
+    numDescompuesto.append(centenas)
+   
+    restoD = restoC % 100 
+
+    decenas = restoD // 10 
+    numDescompuesto.append(decenas)
+
+    unidades = restoD % 10 
+    numDescompuesto.append(unidades)
 
 
-
-
+arabigo_a_romano(456)
