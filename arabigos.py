@@ -31,7 +31,12 @@ def tratarMillares(millares):
     elif millares == 3:
         numRomano += 'MMM'
     else:
-        return 0
+        resultMil = arabigo_a_romano(millares)
+        if '(' == resultMil[0]:
+            numRomano = resultMil[0:resultMil.rindex(")")+1] + "(" + resultMil[resultMil.rindex(")")+1:] + ")"
+          
+        else:
+            numRomano = "({})".format(resultMil)
     
     return numRomano
 
@@ -89,8 +94,9 @@ def tratarDecenas(decenas):
 
 def tratarUnidades(unidades):
     numRomano = ''
-
-    if unidades == 1:
+    if unidades == 0:
+        pass
+    elif unidades == 1:
         numRomano += 'I'
     elif unidades == 2:
         numRomano += 'II'
@@ -119,3 +125,4 @@ def arabigo_a_romano(numArabigo):
     numRomano = tratarMillares(numDescompuesto[0]) + tratarCentenas(numDescompuesto[1]) + tratarDecenas(numDescompuesto[2]) + tratarUnidades(numDescompuesto[3])
 
     return numRomano
+

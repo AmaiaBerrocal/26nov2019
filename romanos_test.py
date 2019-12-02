@@ -65,6 +65,14 @@ class ArabicNumberTest(unittest.TestCase):
         self.assertEqual(arabigo_a_romano(3555), 'MMMDLV')
         self.assertEqual(arabigo_a_romano(1678), 'MDCLXXVIII')
         self.assertEqual(arabigo_a_romano(2999), 'MMCMXCIX')
+
+    def test_mas_3999(self):
+        self.assertEqual(arabigo_a_romano(4000), '(IV)')
+        self.assertEqual(arabigo_a_romano(6000), '(VI)')
+        self.assertEqual(arabigo_a_romano(5025), '(V)XXV')
+        self.assertEqual(arabigo_a_romano(7923), '(VII)CMXXIII')
+        self.assertEqual(arabigo_a_romano(7553637), '(VII)(DLIII)DCXXXVII')
+
         
 
 if __name__ == '__main__':
